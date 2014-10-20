@@ -39,4 +39,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.customize ["modifyvm", :id, "--ioapic", "on"]
     end
   end
+
+  config.vm.define "puppet_agent1" do |puppet_agent1|
+
+    puppet_agent1.vm.box = "ubuntu-14.04"
+    puppet_agent1.vm.host_name = "slave-02.test.local"
+    puppet_agent1.vm.network "private_network", ip: "192.168.50.12"
+    puppet_agent1.vm.provision :shell, path: "./bootstrap.sh"
+
+    puppet_agent1.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--name", "puppet_agent1"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
+      v.customize ["modifyvm", :id, "--cpus", "2"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
 end
