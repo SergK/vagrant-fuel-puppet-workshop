@@ -12,10 +12,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet_master.vm.host_name = "pxetool.test.local"
     puppet_master.vm.network "private_network", ip: "192.168.50.10"
     puppet_master.vm.provision :shell, path: "./bootstrap.sh"
-    puppet_master.vm.synced_folder "./config-puppet-manifests/src/hiera/", "/var/lib/hiera", owner: "root", group: "root"
-    puppet_master.vm.synced_folder "./config-puppet-manifests/src/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
-    puppet_master.vm.synced_folder "./config-puppet-manifests/src/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
-    puppet_master.vm.synced_folder "./config-puppet-manifests/src/bin", "/etc/puppet/bin", owner: "root", group: "root"
+    puppet_master.vm.synced_folder "./puppet-manifests/src/hiera/", "/var/lib/hiera", owner: "root", group: "root"
+    puppet_master.vm.synced_folder "./puppet-manifests/src/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
+    puppet_master.vm.synced_folder "./puppet-manifests/src/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
+    puppet_master.vm.synced_folder "./puppet-manifests/src/bin", "/etc/puppet/bin", owner: "root", group: "root"
 
     puppet_master.vm.provider "virtualbox" do |v|
       v.customize ["modifyvm", :id, "--name", "puppet_master"]
