@@ -8,6 +8,8 @@ sudo tee -a /etc/hosts <<EOF
 192.168.50.13 slave-08.test.local
 192.168.50.14 slave-10.test.local
 
+172.18.210.134 fuel-mirror.kha.mirantis.net
+
 EOF
 
 # update everything
