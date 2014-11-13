@@ -3,7 +3,8 @@
 sudo tee -a /etc/hosts <<EOF
 
 192.168.50.10 pxetool.test.local
-192.168.50.11 slave-01.test.local
+# ensure from site.pp that you have jenkins master on this node
+192.168.50.11 slave-01.test.local jenkins-master.test.local
 192.168.50.12 slave-02.test.local
 192.168.50.13 slave-08.test.local
 192.168.50.14 slave-10.test.local
