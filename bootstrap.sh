@@ -6,8 +6,15 @@ sudo tee -a /etc/hosts <<EOF
 # ensure from site.pp that you have jenkins master on this node
 192.168.50.11 slave-01.test.local jenkins-master.test.local jenkins-product.test.local
 192.168.50.12 slave-02.test.local
-192.168.50.13 slave-08.test.local
-192.168.50.14 slave-10.test.local
+192.168.50.13 slave-03.test.local
+192.168.50.14 slave-04.test.local
+192.168.50.15 slave-05.test.local
+192.168.50.16 slave-06.test.local
+192.168.50.17 slave-07.test.local
+192.168.50.18 slave-08.test.local
+192.168.50.19 slave-09.test.local
+192.168.50.20 slave-10.test.local
+
 
 172.18.210.134 fuel-mirror.kha.mirantis.net
 
