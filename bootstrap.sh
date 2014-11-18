@@ -21,16 +21,15 @@ sudo tee -a /etc/hosts <<EOF
 EOF
 
 # update everything
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y
-sudo apt-get install git -y
+sudo apt-get update && sudo apt-get upgrade -y
 
-sudo chown vagrant.vagrant -R /home/vagrant/
+sudo chown vagrant:vagrant -R /home/vagrant/
 
 sudo mkdir -p /var/lib/hiera
 sudo chown root:root -R /var/lib/hiera
 
 # install packages
-sudo apt-get install -y puppet
+sudo apt-get install -y puppet git
 
 sudo mkdir -p /etc/puppet/bin
 
