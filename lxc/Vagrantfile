@@ -10,10 +10,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     pxetool.vm.box = "fgrehm/trusty64-lxc"
     pxetool.vm.host_name = "pxetool.test.local"
     pxetool.vm.provision :shell, path: "./bootstrap.sh"
-    pxetool.vm.synced_folder "./puppet-manifests/hiera/", "/var/lib/hiera", owner: "root", group: "root"
-    pxetool.vm.synced_folder "./puppet-manifests/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
-    pxetool.vm.synced_folder "./puppet-manifests/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
-    pxetool.vm.synced_folder "./puppet-manifests/bin", "/etc/puppet/bin", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/hiera/", "/var/lib/hiera", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/bin", "/etc/puppet/bin", owner: "root", group: "root"
 
     pxetool.vm.provider "lxc" do |v|
       v.container_name = 'pxetool'
