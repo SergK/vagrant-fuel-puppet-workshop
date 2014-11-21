@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.define "pxetool", primary: true do |pxetool|
+    pxetool.vm.box = "fgrehm/trusty64-lxc"
+    pxetool.vm.host_name = "pxetool.test.local"
+    pxetool.vm.provision :shell, path: "./bootstrap.sh"
+    pxetool.vm.synced_folder "./puppet-manifests/hiera/", "/var/lib/hiera", owner: "root", group: "root"
+    pxetool.vm.synced_folder "./puppet-manifests/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
+    pxetool.vm.synced_folder "./puppet-manifests/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
+    pxetool.vm.synced_folder "./puppet-manifests/bin", "/etc/puppet/bin", owner: "root", group: "root"
+
+    pxetool.vm.provider "lxc" do |v|
+      v.container_name = 'pxetool'
+      v.customize 'cgroup.memory.limit_in_bytes', '1024M'
+    end
+  end
+
+
+  config.vm.define "slave01", primary: true do |slave01|
+    slave01.vm.box = "fgrehm/trusty64-lxc"
+    slave01.vm.host_name = "slave-01.test.local"
+    slave01.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave01.vm.provider "lxc" do |v|
+      v.container_name = 'slave01'
+      v.customize 'cgroup.memory.limit_in_bytes', '2048M'
+    end
+  end
+
+end
