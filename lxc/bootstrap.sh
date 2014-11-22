@@ -5,7 +5,7 @@ sudo sed -i 's/archive\./ua.archive\./g' /etc/apt/sources.list
 
 sudo tee -a /etc/hosts <<EOF
 
-172.18.210.134 fuel-mirror.kha.mirantis.net
+172.18.198.42 osci-mirror-kha.kha.mirantis.net
 
 EOF
 

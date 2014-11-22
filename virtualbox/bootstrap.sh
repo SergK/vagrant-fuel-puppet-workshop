@@ -15,8 +15,7 @@ sudo tee -a /etc/hosts <<EOF
 192.168.50.19 slave-09.test.local
 192.168.50.20 slave-10.test.local
 
-
-172.18.210.134 fuel-mirror.kha.mirantis.net
+172.18.198.42 osci-mirror-kha.kha.mirantis.net
 
 EOF
 
