@@ -1,10 +1,13 @@
 #!/bin/bash -x
 
-# use Ukrainian mirrors
+# use Ukrainian mirrors, but then will be overwritten by puppet apt module
 sudo sed -i 's/archive\./ua.archive\./g' /etc/apt/sources.list
 
 sudo tee -a /etc/hosts <<EOF
 
+# most of the things resolved by lxc dnsmasq service
+
+# some custom record (only for Kharkov location)
 172.18.198.42 osci-mirror-kha.kha.mirantis.net
 
 EOF
