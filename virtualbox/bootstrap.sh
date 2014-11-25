@@ -14,6 +14,16 @@ sudo tee -a /etc/hosts <<EOF
 192.168.50.18 slave-08.test.local
 192.168.50.19 slave-09.test.local
 192.168.50.20 slave-10.test.local
+192.168.50.21 slave-11.test.local
+192.168.50.22 slave-12.test.local
+192.168.50.23 slave-13.test.local
+192.168.50.24 slave-14.test.local
+192.168.50.25 slave-15.test.local
+192.168.50.26 slave-16.test.local
+192.168.50.27 slave-17.test.local
+192.168.50.28 slave-18.test.local
+192.168.50.29 slave-19.test.local
+192.168.50.30 slave-20.test.local
 
 172.18.198.42 osci-mirror-kha.kha.mirantis.net
 
