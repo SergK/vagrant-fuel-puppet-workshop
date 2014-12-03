@@ -38,7 +38,7 @@ sudo mkdir -p /var/lib/hiera
 sudo chown root:root -R /var/lib/hiera
 
 # install packages
-sudo apt-get install -y puppet git
+sudo apt-get install -y puppet
 
 sudo mkdir -p /etc/puppet/bin
 
@@ -46,6 +46,8 @@ sudo mkdir -p /etc/puppet/bin
 sed -i '/ssldir/a \server=pxetool.test.local' /etc/puppet/puppet.conf
 
 if ! grep "^slave" /etc/hostname; then
+  # install git
+  sudo apt-get install -y git
   # install puppet master
   sudo /etc/puppet/bin/install_puppet_master.sh
 else
