@@ -237,4 +237,75 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.customize ["modifyvm", :id, "--ioapic", "on"]
     end
   end
+
+  config.vm.define "slave16" do |slave16|
+    slave16.vm.box = "ubuntu-14-04-x64"
+    slave16.vm.host_name = "slave-16.test.local"
+    slave16.vm.network "private_network", ip: "192.168.50.26"
+    slave16.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave16.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--name", "slave16"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
+      v.customize ["modifyvm", :id, "--cpus", "2"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
+  config.vm.define "slave17" do |slave17|
+    slave17.vm.box = "ubuntu-14-04-x64"
+    slave17.vm.host_name = "slave-17.test.local"
+    slave17.vm.network "private_network", ip: "192.168.50.27"
+    slave17.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave17.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--name", "slave17"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
+      v.customize ["modifyvm", :id, "--cpus", "2"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
+  config.vm.define "slave18" do |slave18|
+    slave18.vm.box = "ubuntu-14-04-x64"
+    slave18.vm.host_name = "slave-18.test.local"
+    slave18.vm.network "private_network", ip: "192.168.50.28"
+    slave18.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave18.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--name", "slave18"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
+      v.customize ["modifyvm", :id, "--cpus", "2"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
+  config.vm.define "slave19" do |slave19|
+    slave19.vm.box = "ubuntu-14-04-x64"
+    slave19.vm.host_name = "slave-19.test.local"
+    slave19.vm.network "private_network", ip: "192.168.50.29"
+    slave19.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave19.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--name", "slave19"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
+      v.customize ["modifyvm", :id, "--cpus", "2"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
+  config.vm.define "slave20" do |slave20|
+    slave20.vm.box = "ubuntu-14-04-x64"
+    slave20.vm.host_name = "slave-20.test.local"
+    slave20.vm.network "private_network", ip: "192.168.50.30"
+    slave20.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave20.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--name", "slave20"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
+      v.customize ["modifyvm", :id, "--cpus", "2"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
 end
