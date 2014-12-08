@@ -1,0 +1,53 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.define "pxetool", primary: true do |pxetool|
+    # PXE Tool port
+    #pxetool.vm.network "forwarded_port", guest: 80, host: 8888
+    pxetool.vm.box = "ubuntu-14-04-libvirt"
+    pxetool.vm.host_name = "pxetool.test.local"
+    pxetool.vm.network "private_network", ip: "10.20.30.10"
+    pxetool.vm.provision :shell, path: "./bootstrap.sh"
+    pxetool.vm.synced_folder "../puppet-manifests/hiera/", "/var/lib/hiera", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/bin", "/etc/puppet/bin", owner: "root", group: "root"
+
+    pxetool.vm.provider "libvirt" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.nested = true
+      v.volume_cache = 'none'
+    end
+  end
+
+  config.vm.define "slave01" do |slave01|
+    slave01.vm.box = "ubuntu-14-04-libvirt"
+    slave01.vm.host_name = "slave-01.test.local"
+    slave01.vm.network "private_network", ip: "10.20.30.11"
+    slave01.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave01.vm.provider "libvirt" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.nested = true
+      v.volume_cache = 'none'
+    end
+  end
+
+  config.vm.define "slave02" do |slave02|
+    slave02.vm.box = "ubuntu-14-04-libvirt"
+    slave02.vm.host_name = "slave-02.test.local"
+    slave02.vm.network "private_network", ip: "10.20.30.12"
+    slave02.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave02.vm.provider "libvirt" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.nested = true
+      v.volume_cache = 'none'
+    end
+  end
+
+end
