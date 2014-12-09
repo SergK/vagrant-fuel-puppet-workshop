@@ -9,10 +9,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     pxetool.vm.host_name = "pxetool.test.local"
     pxetool.vm.network "private_network", ip: "10.20.30.10"
     pxetool.vm.provision :shell, path: "./bootstrap.sh"
-    pxetool.vm.synced_folder "../puppet-manifests/hiera/", "/var/lib/hiera", owner: "root", group: "root"
-    pxetool.vm.synced_folder "../puppet-manifests/modules/", "/usr/share/puppet/modules", owner: "root", group: "root"
-    pxetool.vm.synced_folder "../puppet-manifests/manifests/", "/etc/puppet/manifests", owner: "root", group: "root"
-    pxetool.vm.synced_folder "../puppet-manifests/bin", "/etc/puppet/bin", owner: "root", group: "root"
+    pxetool.vm.synced_folder "../puppet-manifests/hiera/", "/var/lib/hiera", type: "nfs"
+    pxetool.vm.synced_folder "../puppet-manifests/modules/", "/usr/share/puppet/modules", type: "nfs"
+    pxetool.vm.synced_folder "../puppet-manifests/manifests/", "/etc/puppet/manifests", type: "nfs"
+    pxetool.vm.synced_folder "../puppet-manifests/bin", "/etc/puppet/bin", type: "nfs"
 
     pxetool.vm.provider "libvirt" do |v|
       v.memory = 2048
@@ -43,6 +43,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     slave02.vm.provision :shell, path: "./bootstrap.sh"
 
     slave02.vm.provider "libvirt" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.nested = true
+      v.volume_cache = 'none'
+    end
+  end
+
+  config.vm.define "slave03" do |slave03|
+    slave03.vm.box = "ubuntu-14-04-libvirt"
+    slave03.vm.host_name = "slave-03.test.local"
+    slave03.vm.network "private_network", ip: "10.20.30.13"
+    slave03.vm.provision :shell, path: "./bootstrap.sh"
+
+    slave03.vm.provider "libvirt" do |v|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
