@@ -5,14 +5,29 @@ Description:
 * Provides Vagrant cluster deployment (using Virtualbox, LXC, libvirt+KVM/QEMU provisioners);
 * Configures environment for working with puppet manifests for Fuel CI environment.
 
+## Tested environment
+```
+Distributor ID: LinuxMint
+Description:  Linux Mint 17 Qiana
+Release:  17
+Codename: qiana
+```
+
+```
+Distributor ID: Ubuntu
+Description:  Ubuntu 14.04.1 LTS
+Release:  14.04
+Codename: trusty
+```
+
 ## Orchestration
 * vagrant ( > 1.6.5);
 
-## virtualization
-You can choose any virtual approach:
+## Virtualization
+You can choose any virtualization approach for deploying cluster:
 * virtualbox ( > 4.2)
 * lxc ( > 1.0.6) + vagrant-lxc plugin (1.0.1)
-* libvirt (1.2.2) + qemu-kvm (2.0.0) + vagrant-libvirt plugin (0.0.24) + NFS kernel server (need for direct manifests modification)
+* libvirt (1.2.2) + qemu-kvm (2.0.0) + vagrant-libvirt plugin (0.0.24) + NFS server (allows to modify code on puppet master directly)
 
 ## HowTo:
 
