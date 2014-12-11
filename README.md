@@ -54,3 +54,45 @@ Each of the above folders contain Vagrantfile and bootstrap.sh
 Please keep in mind, that there might be some limitations while working with virtual machines (technologies):
 
 1. in case on `--provider=libvirt`, rsync method was replaced by NFS server, for now manifests appear inside pxetool.test.local over nfs. If you still want to use rsync method, please check [vagrant-libvirt plugin](https://github.com/pradels/vagrant-libvirt) documentation
+
+### Project tree structure
+
+
+```
+.
+├── libvirt
+│   ├── bootstrap.sh
+│   └── Vagrantfile
+├── lxc
+│   ├── bootstrap.sh
+│   └── Vagrantfile
+├── puppet-manifests
+│   ├── bin
+│   │   ├── install_modules.sh
+│   │   └── install_puppet_master.sh
+│   ├── hiera
+│   │   ├── common-example.yaml
+│   │   └── common.yaml -> common-example.yaml
+│   ├── LICENSE
+│   ├── manifests
+│   │   └── site.pp
+│   ├── modules
+│   │   ├── apt
+│   │   ├── ...
+│   │   ├── ...
+│   │   ├── ...
+│   │   ├── ...
+│   │   ├── ...
+│   │   └── zypprepo
+│   └── tests
+│       ├── helpers
+│       ├── rc.local
+│       ├── run_tests.py
+│       ├── run_tests.sh
+│       └── tests
+├── README.md
+└── virtualbox
+    ├── bootstrap.sh
+    └── Vagrantfile
+
+```
