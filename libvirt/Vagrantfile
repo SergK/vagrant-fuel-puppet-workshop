@@ -204,7 +204,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  config.vm.define "slave12" do |slave14|
+  config.vm.define "slave14" do |slave14|
     slave14.vm.box = "ubuntu-14-04-libvirt"
     slave14.vm.host_name = "slave-14.test.local"
     slave14.vm.network "private_network", ip: "10.20.30.24"
