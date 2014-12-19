@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+# use closer mirrors on nodes start
+sed -i 's/us\./ua\./g' /etc/apt/sources.list
+
 sudo tee -a /etc/hosts <<EOF
 
 192.168.50.10 pxetool.test.local
