@@ -7,7 +7,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #pxetool.vm.network "forwarded_port", guest: 80, host: 8888
     pxetool.vm.box = "ubuntu-14-04-libvirt"
     pxetool.vm.host_name = "pxetool.test.local"
-    pxetool.vm.network "private_network", ip: "10.20.30.10"
     pxetool.vm.provision :shell, path: "./bootstrap.sh"
     pxetool.vm.synced_folder "../puppet-manifests/hiera/", "/var/lib/hiera", type: "nfs"
     pxetool.vm.synced_folder "../puppet-manifests/modules/", "/usr/share/puppet/modules", type: "nfs"
@@ -25,7 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave01" do |slave01|
     slave01.vm.box = "ubuntu-14-04-libvirt"
     slave01.vm.host_name = "slave-01.test.local"
-    slave01.vm.network "private_network", ip: "10.20.30.11"
     slave01.vm.provision :shell, path: "./bootstrap.sh"
 
     slave01.vm.provider "libvirt" do |v|
@@ -39,7 +37,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave02" do |slave02|
     slave02.vm.box = "ubuntu-14-04-libvirt"
     slave02.vm.host_name = "slave-02.test.local"
-    slave02.vm.network "private_network", ip: "10.20.30.12"
     slave02.vm.provision :shell, path: "./bootstrap.sh"
 
     slave02.vm.provider "libvirt" do |v|
@@ -53,7 +50,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave03" do |slave03|
     slave03.vm.box = "ubuntu-14-04-libvirt"
     slave03.vm.host_name = "slave-03.test.local"
-    slave03.vm.network "private_network", ip: "10.20.30.13"
     slave03.vm.provision :shell, path: "./bootstrap.sh"
 
     slave03.vm.provider "libvirt" do |v|
@@ -67,7 +63,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave04" do |slave04|
     slave04.vm.box = "ubuntu-14-04-libvirt"
     slave04.vm.host_name = "slave-04.test.local"
-    slave04.vm.network "private_network", ip: "10.20.30.14"
     slave04.vm.provision :shell, path: "./bootstrap.sh"
 
     slave04.vm.provider "libvirt" do |v|
@@ -81,7 +76,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave05" do |slave05|
     slave05.vm.box = "ubuntu-14-04-libvirt"
     slave05.vm.host_name = "slave-05.test.local"
-    slave05.vm.network "private_network", ip: "10.20.30.15"
     slave05.vm.provision :shell, path: "./bootstrap.sh"
 
     slave05.vm.provider "libvirt" do |v|
@@ -95,7 +89,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave06" do |slave06|
     slave06.vm.box = "ubuntu-14-04-libvirt"
     slave06.vm.host_name = "slave-06.test.local"
-    slave06.vm.network "private_network", ip: "10.20.30.16"
     slave06.vm.provision :shell, path: "./bootstrap.sh"
 
     slave06.vm.provider "libvirt" do |v|
@@ -109,7 +102,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave07" do |slave07|
     slave07.vm.box = "ubuntu-14-04-libvirt"
     slave07.vm.host_name = "slave-07.test.local"
-    slave07.vm.network "private_network", ip: "10.20.30.17"
     slave07.vm.provision :shell, path: "./bootstrap.sh"
 
     slave07.vm.provider "libvirt" do |v|
@@ -123,7 +115,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave08" do |slave08|
     slave08.vm.box = "ubuntu-14-04-libvirt"
     slave08.vm.host_name = "slave-08.test.local"
-    slave08.vm.network "private_network", ip: "10.20.30.18"
     slave08.vm.provision :shell, path: "./bootstrap.sh"
 
     slave08.vm.provider "libvirt" do |v|
@@ -137,7 +128,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave09" do |slave09|
     slave09.vm.box = "ubuntu-14-04-libvirt"
     slave09.vm.host_name = "slave-09.test.local"
-    slave09.vm.network "private_network", ip: "10.20.30.19"
     slave09.vm.provision :shell, path: "./bootstrap.sh"
 
     slave09.vm.provider "libvirt" do |v|
@@ -151,7 +141,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave10" do |slave10|
     slave10.vm.box = "ubuntu-14-04-libvirt"
     slave10.vm.host_name = "slave-10.test.local"
-    slave10.vm.network "private_network", ip: "10.20.30.20"
     slave10.vm.provision :shell, path: "./bootstrap.sh"
 
     slave10.vm.provider "libvirt" do |v|
@@ -165,7 +154,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave11" do |slave11|
     slave11.vm.box = "ubuntu-14-04-libvirt"
     slave11.vm.host_name = "slave-11.test.local"
-    slave11.vm.network "private_network", ip: "10.20.30.21"
     slave11.vm.provision :shell, path: "./bootstrap.sh"
 
     slave11.vm.provider "libvirt" do |v|
@@ -179,7 +167,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave12" do |slave12|
     slave12.vm.box = "ubuntu-14-04-libvirt"
     slave12.vm.host_name = "slave-12.test.local"
-    slave12.vm.network "private_network", ip: "10.20.30.22"
     slave12.vm.provision :shell, path: "./bootstrap.sh"
 
     slave12.vm.provider "libvirt" do |v|
@@ -193,7 +180,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave13" do |slave13|
     slave13.vm.box = "ubuntu-14-04-libvirt"
     slave13.vm.host_name = "slave-13.test.local"
-    slave13.vm.network "private_network", ip: "10.20.30.23"
     slave13.vm.provision :shell, path: "./bootstrap.sh"
 
     slave13.vm.provider "libvirt" do |v|
@@ -207,7 +193,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave14" do |slave14|
     slave14.vm.box = "ubuntu-14-04-libvirt"
     slave14.vm.host_name = "slave-14.test.local"
-    slave14.vm.network "private_network", ip: "10.20.30.24"
     slave14.vm.provision :shell, path: "./bootstrap.sh"
 
     slave14.vm.provider "libvirt" do |v|
@@ -221,7 +206,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave15" do |slave15|
     slave15.vm.box = "ubuntu-14-04-libvirt"
     slave15.vm.host_name = "slave-15.test.local"
-    slave15.vm.network "private_network", ip: "10.20.30.25"
     slave15.vm.provision :shell, path: "./bootstrap.sh"
 
     slave15.vm.provider "libvirt" do |v|
@@ -236,7 +220,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave16" do |slave16|
     slave16.vm.box = "ubuntu-14-04-libvirt"
     slave16.vm.host_name = "slave-16.test.local"
-    slave16.vm.network "private_network", ip: "10.20.30.26"
     slave16.vm.provision :shell, path: "./bootstrap.sh"
 
     slave16.vm.provider "libvirt" do |v|
@@ -250,7 +233,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave17" do |slave17|
     slave17.vm.box = "ubuntu-14-04-libvirt"
     slave17.vm.host_name = "slave-17.test.local"
-    slave17.vm.network "private_network", ip: "10.20.30.27"
     slave17.vm.provision :shell, path: "./bootstrap.sh"
 
     slave17.vm.provider "libvirt" do |v|
@@ -264,7 +246,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave18" do |slave18|
     slave18.vm.box = "ubuntu-14-04-libvirt"
     slave18.vm.host_name = "slave-18.test.local"
-    slave18.vm.network "private_network", ip: "10.20.30.28"
     slave18.vm.provision :shell, path: "./bootstrap.sh"
 
     slave18.vm.provider "libvirt" do |v|
@@ -278,7 +259,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave19" do |slave19|
     slave19.vm.box = "ubuntu-14-04-libvirt"
     slave19.vm.host_name = "slave-19.test.local"
-    slave19.vm.network "private_network", ip: "10.20.30.29"
     slave19.vm.provision :shell, path: "./bootstrap.sh"
 
     slave19.vm.provider "libvirt" do |v|
@@ -292,7 +272,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "slave20" do |slave20|
     slave20.vm.box = "ubuntu-14-04-libvirt"
     slave20.vm.host_name = "slave-20.test.local"
-    slave20.vm.network "private_network", ip: "10.20.30.30"
     slave20.vm.provision :shell, path: "./bootstrap.sh"
 
     slave20.vm.provider "libvirt" do |v|

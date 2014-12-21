@@ -50,10 +50,28 @@ Each of the above folders contain Vagrantfile and bootstrap.sh
 6. You can define "roles" for each node from ``./puppet-manifests/manifests/site.pp`` and the start it ``vagrant up NODE_NAME``
 7. ``vagrant ssh`` (by default you will enter _pxetool.test.local_), or ``vagrant ssh NODE_NAME``
 
-## Limitations
+## Limitations/Notes
 Please keep in mind, that there might be some limitations while working with virtual machines (technologies):
 
 1. in case on `--provider=libvirt`, rsync method was replaced by NFS server, for now manifests appear inside pxetool.test.local over nfs. If you still want to use rsync method, please check [vagrant-libvirt plugin](https://github.com/pradels/vagrant-libvirt) documentation
+
+2. in case on `--provider=libvirt`, dnsmasq should be correctly configured, at least you need to add the domain `test.local` (`virsh net-edit vagrant-libvirt`), for example:
+
+```
+<network ipv6='yes'>
+  <name>vagrant-libvirt</name>
+  <uuid>3b74c6db-8134-47a0-8d01-c9d56a10d560</uuid>
+  <forward mode='nat'/>
+  <bridge name='virbr1' stp='on' delay='0'/>
+  <mac address='52:54:00:ed:f2:06'/>
+  <domain name='test.local'/>
+  <ip address='192.168.121.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.121.2' end='192.168.121.254'/>
+    </dhcp>
+  </ip>
+</network>
+```
 
 ### Project tree structure
 

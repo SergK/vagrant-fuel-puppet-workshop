@@ -58,11 +58,6 @@ else
   sudo tail /var/log/syslog
   # let's wait a little
   sleep 5
-  # and restart puppet agent
-  sudo /etc/init.d/puppet restart
-  sudo tail /var/log/syslog
-  # enable and run apply
-  sleep 3
   sudo puppet agent --enable
   sudo puppet agent -tvd
 fi
