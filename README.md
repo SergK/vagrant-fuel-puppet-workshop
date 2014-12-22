@@ -55,7 +55,7 @@ Please keep in mind, that there might be some limitations while working with vir
 
 1. in case on `--provider=libvirt`, rsync method was replaced by NFS server, for now manifests appear inside pxetool.test.local over nfs. If you still want to use rsync method, please check [vagrant-libvirt plugin](https://github.com/pradels/vagrant-libvirt) documentation
 
-2. in case on `--provider=libvirt`, dnsmasq should be correctly configured, at least you need to add the domain `test.local` (`virsh net-edit vagrant-libvirt`), for example:
+2. in case on `--provider=libvirt`, dnsmasq should be correctly configured, at least you need to add the domain `test.local` (`virsh net-edit default`), for example:
 
 ```
 <network ipv6='yes'>
@@ -65,9 +65,9 @@ Please keep in mind, that there might be some limitations while working with vir
   <bridge name='virbr1' stp='on' delay='0'/>
   <mac address='52:54:00:ed:f2:06'/>
   <domain name='test.local'/>
-  <ip address='192.168.121.1' netmask='255.255.255.0'>
+  <ip address='192.168.122.1' netmask='255.255.255.0'>
     <dhcp>
-      <range start='192.168.121.2' end='192.168.121.254'/>
+      <range start='192.168.122.2' end='192.168.122.254'/>
     </dhcp>
   </ip>
 </network>
