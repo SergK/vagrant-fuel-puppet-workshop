@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 # use closer mirrors on nodes start
-sed -i 's/us\./ua\./g' /etc/apt/sources.list
+sed -i 's/archive\./ua\.archive\./g' /etc/apt/sources.list
 
 sudo tee -a /etc/hosts <<EOF
 
