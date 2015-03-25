@@ -1,7 +1,18 @@
 #!/bin/bash -x
 
+LOCATION=kha
+
+export DEBIAN_FRONTEND=noninteractive
+
 # use closer mirrors on nodes start
-sed -i 's/archive\./ua\.archive\./g' /etc/apt/sources.list
+if test "${LOCATION}" = "kha"; then
+  # internal network
+  sed -i 's/archive\.ubuntu\.com/mirrors\.kha\.mirantis\.net/g' /etc/apt/sources.list
+  sed -i 's/security\.ubuntu\.com/mirrors\.kha\.mirantis\.net/g' /etc/apt/sources.list
+else
+  # external network
+  sed -i 's/archive\./ua\.archive\./g' /etc/apt/sources.list
+fi
 
 # update everything
 sudo apt-get update && sudo apt-get upgrade -y
