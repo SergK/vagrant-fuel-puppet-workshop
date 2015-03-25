@@ -43,5 +43,5 @@ else
   # let's wait a little
   sleep 5
   sudo puppet agent --enable
-  sudo puppet agent -tvd
+  sudo FACTER_LOCATION=kha puppet agent -tvd
 fi
