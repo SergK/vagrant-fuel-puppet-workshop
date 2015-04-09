@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -47,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -62,7 +62,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -77,7 +77,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -92,7 +92,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -107,7 +107,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -122,7 +122,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -137,7 +137,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -152,7 +152,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -167,7 +167,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -182,7 +182,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -197,7 +197,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -212,7 +212,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -227,7 +227,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -242,7 +242,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -258,7 +258,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -273,7 +273,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -288,7 +288,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -303,7 +303,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
@@ -318,7 +318,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.memory = 2048
       v.cpus = 2
       v.nested = true
-      v.volume_cache = 'none'
+      v.volume_cache = 'unsafe'
       v.management_network_name = 'default'
       v.management_network_address = '192.168.122.0/24'
     end
