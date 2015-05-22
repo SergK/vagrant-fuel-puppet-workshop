@@ -36,12 +36,12 @@ if grep "^pxetool" /etc/hostname; then
   sudo chown root:root -R /var/lib/hiera
 
   # install puppet master
-  sudo /etc/puppet/bin/install_puppet_master.sh
+  FACTER_LOCATION="${LOCATION}" sudo /etc/puppet/bin/install_puppet_master.sh
 else
   # we are working with slaves
   sudo tail /var/log/syslog
   # let's wait a little
-  sleep 5
+  sleep 3
   sudo puppet agent --enable
-  sudo FACTER_LOCATION=kha puppet agent -tvd
+  sudo FACTER_LOCATION="${LOCATION}" FACTER_ROLE=rubygems_mirror puppet agent -tvd
 fi
