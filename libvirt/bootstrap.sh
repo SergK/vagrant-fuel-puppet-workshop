@@ -43,5 +43,5 @@ else
   # let's wait a little
   sleep 3
   sudo puppet agent --enable
-  sudo FACTER_LOCATION="${LOCATION}" FACTER_ROLE=rubygems_mirror puppet agent -tvd
+  sudo FACTER_LOCATION="${LOCATION}" FACTER_ROLE=$1 puppet agent -tvd
 fi
