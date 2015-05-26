@@ -37,7 +37,7 @@ You can choose any virtualization approach for deploying cluster:
 4. Choose the virtualization type: virtualbox, lxc or libvirt
  * `cd virtualbox/`
  * `cd lxc/`
- * `cd libvirt/`
+ * `cd libvirt/` [recomended]
 
 Each of the above folders contain Vagrantfile and bootstrap.sh
 
@@ -47,7 +47,7 @@ Each of the above folders contain Vagrantfile and bootstrap.sh
 
  > use `--provider=lxc` or `--provider=libvirt`, if you are going to start other types of vm
 
-6. You can define "roles" for each node from ``./puppet-manifests/manifests/site.pp`` and the start it ``vagrant up NODE_NAME``
+6. You can define "roles" (check hiera/roles) for each node from environment variable ``FACTER_ROLE=jenkins_slave vagrant up NODE_NAME  --provider=libvirt``
 7. ``vagrant ssh`` (by default you will enter _pxetool.test.local_), or ``vagrant ssh NODE_NAME``
 
 ## Limitations/Notes
