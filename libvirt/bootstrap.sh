@@ -33,7 +33,6 @@ if grep "^pxetool" /etc/hostname; then
 
   # create dir for
   sudo mkdir -p /var/lib/hiera
-  sudo chown root:root -R /var/lib/hiera
 
   # install puppet master
   FACTER_LOCATION="${LOCATION}" sudo /etc/puppet/bin/install_puppet_master.sh
