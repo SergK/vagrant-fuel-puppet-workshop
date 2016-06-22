@@ -22,16 +22,12 @@ sudo chown vagrant:vagrant -R /home/vagrant/
 # install packages
 sudo apt-get install -y puppet
 
-sudo mkdir -p /etc/puppet/bin
+sudo mkdir -p /etc/puppet/bin /etc/puppet/hiera
 
 # add server to config
 sed -i '/ssldir/a \server=pxetool.test.local' /etc/puppet/puppet.conf
 
 if grep "^pxetool" /etc/hostname; then
-  # install git
-  sudo apt-get install -y git
-
-  cp /var/lib/hiera/hiera-stub.yaml /etc/puppet/hiera.yaml
 
   # install puppet master
   FACTER_LOCATION="${LOCATION}" sudo /etc/puppet/bin/install_puppet_master.sh
